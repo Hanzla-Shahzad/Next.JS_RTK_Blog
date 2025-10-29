@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import main from "../mainSlice/page";
+import mainReducer from "../mainSlice/page";
+
 export const store = configureStore({
   reducer: {
-    main,
+    main: mainReducer,
   },
 });

@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getData } from "../Thunks/productThunk";
+import { redirect } from "next/navigation";
 
 export default function Main() {
   const dispatch = useDispatch();
@@ -30,6 +31,14 @@ export default function Main() {
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
         📰 Latest Posts
       </h1>
+      <div className="flex justify-center">
+        <button
+          className="px-3 py-2.5 text-white rounded-3xl cursor-pointer bg-green-500 mx-auto mb-5"
+          onClick={() => redirect("/userInfo?id=1")}
+        >
+          Dynamic Routes
+        </button>
+      </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data?.length > 0 ? (
